@@ -62,25 +62,22 @@ Calculate Initial Risk Scores:
 ```sql
 USE client_retention_db;
 CALL calculate_churn_risk();
-📈 How to Use
-1. View High-Risk Clients
-sql
+--📈 How to Use
+--1. View High-Risk Clients
 SELECT * FROM vw_high_risk_clients;
 Returns clients with churn risk score ≥ 0.6, showing their current plan and renewal date.
 
-2. Identify Upsell Opportunities
-sql
+--2. Identify Upsell Opportunities
 SELECT * FROM vw_upsell_opportunities;
 Shows engaged clients on lower-tier plans who are ideal for upgrade offers.
 
-3. Manual Risk Calculation
-Execute the stored procedure to update all client risk scores:
+--3. Manual Risk Calculation
+--Execute the stored procedure to update all client risk scores:
 
-sql
 CALL calculate_churn_risk();
-4. Sample Data Analysis
-The database comes pre-loaded with sample data that demonstrates:
 ```
+Sample Data Analysis:
+The database comes pre-loaded with sample data that demonstrates:
 
 Sample Clients:
 Client #4 (CloudTask Inc.) with high churn risk due to negative interactions
